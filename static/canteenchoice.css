@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    font-size:18px;
+    font-weight: bold;
+    color: black;
+    margin:38px;
+}
+a:hover{
+    color:red;
+}
+.nav{
+    text-align: center;
+    background-color: aqua;
+    height: 38px;
+}
+.right{
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+h1{
+    text-align: center;
+    padding: 38px;
+}
+select{
+    margin:38px;
+    padding:8px;
+    width:40%;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #f5f0f0;
+}
+.minank8{
+    border-radius: 8px;
+    outline: none;
+    /* border:none; */
+    font-weight: bold;
+    background-color: #f5f0f0;
+    padding: 8px;
+    width:138px;
+}
+.minank8:hover{
+    background-color: grey;
+}
+.container{
+    background-color: antiquewhite;
+    height: 100%;
+}

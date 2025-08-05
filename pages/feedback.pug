@@ -1,0 +1,38 @@
+extend index 
+block title 
+    title Reviews Page 
+    <link rel="stylesheet" href="static/feedback.css">
+    <script src="https://kit.fontawesome.com/67c66657c7.js"></script>
+
+block content
+    div.minank0
+        <div class="container">
+            <form action="/reviews" method="post">
+                <h1>Give your Feedback</h1>
+                <div class="id">
+                    <label for="canteen">Food Title-Food Type</label>
+                    <select id="canteen" name="title">
+                        each i1 in foodtitle 
+                            <option value= `#{i1.foodtitle}___#{i1.foodtype}`>#{i1.foodtitle}-#{i1.foodtype}</option>
+                    </select>                 
+                </div>
+                //- <div class="id">
+                //-     <label for="canteen">Canteen</label>
+                //-     <select id="canteen" name="canteen">
+                //-         each i2 in canteen 
+                //-             <option value= `#{i2.canteennumber}`>#{i2.canteenname}</option>
+                //-     </select>
+                //- </div>
+                <textarea cols="15" rows="5" name="description" placeholder="Enter your Feedback Here:" required></textarea>
+                <button>Submit</button>
+            </form>
+        </div>
+        each i3 in rev 
+            br
+            .minank7 
+                .color 
+                    h3 User Name: #{i3.username}  
+                    h3 Canteen Name: #{i3.canteenname}
+                    p Food Title: #{i3.foodtitle} 
+                    p Food Type: #{i3.foodtype}
+                    p Description: #{i3.description}

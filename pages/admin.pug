@@ -1,0 +1,443 @@
+doctype html
+html
+  head
+    title Admin Page
+    style.
+      body {
+        font-family: 'Calibri',Sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #e0ebeb;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-image:url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhZmV8ZW58MHx8MHx8fDA%3D');
+      }
+
+      header {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin:5px;
+        border-radius:20px;
+      }
+
+      main {
+        overflow:hidden;
+        display: flex;
+        padding: 20px;
+      }
+
+      #aside1 {
+        display:flex;
+        width:70%;
+        padding: 5%;
+        left:5px;
+        overflow-y:auto;
+        color:white;
+      }
+      #addCafeButton1{
+        background-color:#ffe6cc;
+        border-radius:5px;
+        width: 100px;
+        height: 30px;
+        margin:20px;
+      }
+      #addCafeButton2{
+        background-color:#ffe6cc;
+        border-radius:5px;
+        width: 100px;
+        height: 30px;
+        margin:20px;
+      }
+      #addCafeButton3{
+        background-color:#ffe6cc;
+        border-radius:5px;
+        width: 100px;
+        height: 30px;
+        margin:20px;
+      }
+      #addCafeButton4{
+        background-color:#ffe6cc;
+        border-radius:5px;
+        width: 100px;
+        height: 30px;
+        margin:20px;
+      }
+      #addCafeButton5{
+        background-color:#ffe6cc;
+        border-radius:5px;
+        width: 100px;
+        height: 30px;
+        margin:20px;
+      }
+      #cafeid {
+        flex: 1;
+        
+        padding: 5%;
+      }
+      form#grantPermissionForm3 button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 1.2em;
+        max-height:500px;
+      }
+      form#grantPermissionForm5 button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 1.2em;
+        max-height:500px;
+      }
+      form#grantPermissionForm3{
+        background-color:#997445  ;
+        padding:20px;
+        border-radius:10px;
+        align:center;
+      }
+      form#grantPermissionForm2{
+        background-color:#997445  ;
+        padding:20px;
+        border-radius:10px;
+        align:center;
+      }
+      form#grantPermissionForm1{
+        background-color:#997445  ;
+        padding:20px;
+        border-radius:10px;
+        align:center;
+      }
+      form#grantPermissionForm4{
+        background-color:#997445  ;
+        padding:20px;
+        border-radius:10px;
+        align:center;
+      }
+      form#grantPermissionForm5{
+        background-color:#997445  ;
+        padding:20px;
+        border-radius:10px;
+        align:center;
+      }
+
+      #input1{
+        margin:5px;
+        color:white;
+        border-radius:5px;
+      }
+      #input2{
+        margin:5px;
+        color:white;
+         border-radius:5px;
+      }
+      #input3{
+        margin:5px;
+        color:white;
+        max-height:60px;
+         border-radius:5px;
+      }
+      footer {
+        position: absolute;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1px;
+        right: 5px;
+        left:5px;
+        bottom:5px; 
+      }
+      #submitbutton1{
+        background-color:#804000;
+        text-align:center;
+        width:100px;
+        height:30px;
+        border:2px;
+        color:white;
+        border-color:white;
+        border-radius:10px;
+      }
+      #submitbutton2{
+        background-color:#804000;
+        text-align:center;
+        width:100px;
+        height:30px;
+        border:2px;
+        border-color:white;
+        border-radius:10px;
+        color:white;
+      }
+      #submitbutton3{
+        background-color:#804000;
+        text-align:center;
+        width:100px;
+        height:30px;
+        border:2px;
+        border-color:white;
+        border-radius:10px;
+        color:white; 
+        padding: 2px;
+      }
+      #submitbutton4{
+        background-color:#804000;
+        text-align:center;
+        width:100px;
+        height:30px;
+        border:2px;
+        border-color:white;
+        border-radius:10px;
+        color:white;
+      }
+      a{
+        text-decoration:none;
+        color: black;
+      }
+      button:hover{
+        cursor:pointer;
+      }
+      #submitbutton5{
+        background-color:#804000;
+        text-align:center;
+        width:100px;
+        height:30px;
+        border:2px;
+        border-color:white;
+        border-radius:10px;
+        color:white;
+        padding:2px;
+      }
+      #div1{
+        width:300px;
+        background-color:#383128;
+        height:200px;
+        border-radius:15px;
+      }
+      img{
+        margin:30px;
+        max-width:100px;
+        max-height:200px;
+      }
+      .minank9{
+        background-color:lightyellow;
+        text-align:center;
+        width:100px;
+        height:30px;
+        border:2px;
+        border-color:white;
+        border-radius:10px;
+        color:black;
+        padding:2px;
+        margin:8px;
+      }
+    script.
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // Add event listener for the "Add Cafe" button
+        grantPermissionForm2.style.display = 'none';
+        grantPermissionForm1.style.display = 'none';
+        grantPermissionForm3.style.display = 'none';
+        grantPermissionForm4.style.display = 'none';
+        grantPermissionForm5.style.display = 'none';
+        document.getElementById('addCafeButton1').addEventListener('click', function () {
+        
+          const grantPermissionForm1 = document.getElementById('grantPermissionForm1');
+
+          if (grantPermissionForm1.style.display === 'none') {
+            grantPermissionForm2.style.display = 'none';
+            grantPermissionForm3.style.display = 'none';
+            grantPermissionForm4.style.display = 'none';
+            grantPermissionForm5.style.display = 'none';
+            grantPermissionForm1.style.display = 'block';
+          } else {
+            grantPermissionForm1.style.display = 'none';
+          }
+        });
+        document.getElementById('addCafeButton2').addEventListener('click', function () {
+         
+          const grantPermissionForm2 = document.getElementById('grantPermissionForm2');
+
+          if (grantPermissionForm2.style.display === 'none') {
+            grantPermissionForm1.style.display = 'none';
+            grantPermissionForm5.style.display = 'none';
+            grantPermissionForm4.style.display = 'none';
+            grantPermissionForm3.style.display = 'none';
+            grantPermissionForm2.style.display = 'block';
+
+          } else {
+            grantPermissionForm2.style.display = 'none';
+          }
+        });
+        document.getElementById('addCafeButton3').addEventListener('click', function () {
+         
+          const grantPermissionForm3 = document.getElementById('grantPermissionForm3');
+
+          if (grantPermissionForm3.style.display === 'none') {
+            grantPermissionForm1.style.display = 'none';
+            grantPermissionForm5.style.display = 'none';
+            grantPermissionForm4.style.display = 'none';
+            grantPermissionForm2.style.display = 'none';
+            grantPermissionForm3.style.display = 'block';
+
+          } else {
+            grantPermissionForm3.style.display = 'none';
+          }
+        });
+        document.getElementById('addCafeButton4').addEventListener('click', function () {
+         
+          const grantPermissionForm4 = document.getElementById('grantPermissionForm4');
+
+          if (grantPermissionForm4.style.display === 'none') {
+            grantPermissionForm1.style.display = 'none';
+            grantPermissionForm5.style.display = 'none';
+            grantPermissionForm2.style.display = 'none';
+            grantPermissionForm3.style.display = 'none';
+            grantPermissionForm4.style.display = 'block';
+
+          } else {
+            grantPermissionForm4.style.display = 'none';
+          }
+        });
+        document.getElementById('addCafeButton5').addEventListener('click', function () {
+         
+          const grantPermissionForm5 = document.getElementById('grantPermissionForm5');
+
+          if (grantPermissionForm5.style.display === 'none') {
+            grantPermissionForm1.style.display = 'none';
+            grantPermissionForm2.style.display = 'none';
+            grantPermissionForm4.style.display = 'none';
+            grantPermissionForm3.style.display = 'none';
+            grantPermissionForm5.style.display = 'block';
+
+          } else {
+            grantPermissionForm5.style.display = 'none';
+          }
+        });
+        // Add event listener for cafe list items (for demonstration purposes)
+        const cafeList = document.getElementById('cafeList');
+        cafeList.addEventListener('click', function (event) {
+          const targetCafe = event.target.innerText;
+          // You can implement logic to display basic info for the selected cafe
+          alert(`Implement logic to display info for ${targetCafe}`);
+        });
+      });
+        
+  body
+    header
+      h1 Cafe Admin Page
+      nav 
+        button#addCafeButton1 Add Cafe
+        button#addCafeButton2 Remove Cafe
+        button#addCafeButton3 add Menu
+        button#addCafeButton4 remove Menu 
+        button#addCafeButton5 update Menu
+        a(href="/approval")
+          button.minank9 Approval 
+        a(href="/logout") 
+          button.minank9 logout
+
+    main
+      aside#aside1
+        #div1 
+          h3 Admin ID: #{admin1.a_id}
+          h2 Admin Name: #{admin1.name}
+          h3 Admin Email: #{admin1.email}
+        #div2
+          img(src="https://cdn.pixabay.com/photo/2013/07/13/13/38/man-161282_1280.png", alt="")
+           
+        
+        
+      form#grantPermissionForm1(action='/admin/permissionCafe' method='post')
+        #input1 
+          label(for='cafeName') Cafe Name:
+          br
+          br
+          input(type='text' name='cafeName' required)
+          br
+          br
+        #input1
+          label(for='password') Password: 
+          br
+          br
+          input(type='password' name='password' required)
+        br
+        button(type='submit' value='Grant Permission')#submitbutton1 Add cafe 
+      form#grantPermissionForm2(action='/admin/deletionCafe' method='post')
+        #input2
+          label(for='cafeName') Cafe Name:
+          br
+          br
+          input(type='text' name='cafeName')
+          br
+          br
+        #input2
+          label(for='cafe_id') cafe_id: 
+          br
+          br
+          input(type='cafe_id' name='cafe_id' required)
+        br
+        button(type='submit' value='cafe deleted')#submitbutton2 Remove cafe
+      form#grantPermissionForm3(action='/admin/permissionMenu' method='post')
+        #input3
+          label(for='FoodTitle') FoodTitle:
+          br
+          br
+          input(type='text' name='FoodTitle' required)
+          br
+          br
+        #input3 
+          label(for='FoodType') FoodType:
+          br
+          input(type='text' name='FoodType' required)
+          br
+        #input3 
+          label(for='CategoryName') CategoryName:
+          br
+          input(type='text' name='CategoryName' required)
+          br
+        #input3
+          label(for='Description') Description:
+          br
+          input(type='text' name='Description' required)
+          br
+        #input3
+          label(for='Price') Price: 
+          br
+          input(type='text' name='Price' required)
+        br
+        button(type='submit' value='Menu added')#submitbutton3 Add Menu
+      form#grantPermissionForm4(action='/admin/deletionMenu' method='post')
+        #input1 
+          label(for='MenuName') Menu Name:
+          br
+          br
+          input(type='text' name='MenuName')
+          br
+          br
+        button(type='submit' value='Menu deleted')#submitbutton4 Remove Menu
+      form#grantPermissionForm5(action='/admin/UpdationMenu' method='post')
+        #input2
+          label(for='NewName') New Name: 
+          br
+          input(type='text' name='NewName' required)
+        #input3 
+          label(for='NewPrice') New Price: 
+          br
+          input(type='text' name='NewPrice' required)
+        #input3 
+          label(for='NewType') New type: 
+          br
+          input(type='text' name='NewType' required)
+        #input3 
+          label(for='NewDescription') New description: 
+          br
+          input(type='text' name='NewDescription' required)
+        #input3 
+          label(for='NewCategory') New Category: 
+          br
+          input(type='text' name='NewCategory' required)
+        br
+        button(type='submit' value='Menu updated')#submitbutton5 Update Menu
+
+    footer
+      p Your Cafe Management System Footer

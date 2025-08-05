@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup-Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/login_signup.css">
+    <script defer src="static/index.js"></script>
+
+//-    <meta charset="UTF-8">
+//-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//-    <title>Login-Page</title>
+//-    style
+//-       include ../static/login_signup.css
+
+
+</head>
+<body>
+    <div class="form-container">
+        <input type="checkbox" id="chk" aria-hidden="true">
+        <div class="card">
+            <div class="front">
+                <div class="inner">
+                    <label for="chk" aria-hidden="true">Sign-up</label>
+                    <h2 class="cent">Log in</h2> 
+                    <br><br><br>
+                    <form action="/login" method="post" id="contact">
+                        <input type="text" name="name" id="name" placeholder="Phone number,username or email address" required>
+                        <input type="password" name="pass" id="pass" placeholder="Password" required>
+                        <p class="mine">Your Role : <select name="role" id="" required>
+                        //- <option value="38">--Role--</option><!--whatever in value box is store in database-->
+                        <option value="Admin">Admin</option>
+                        <option value="Student">User</option>
+                        <option value="Staff">Staff of cafeteria</option>
+                        <option value="Supplier">Supplier</option>
+                        <option value="Canteen">Canteen</option>
+                        </select></p>
+                        <button type="submit" class="btn">Log in</button>
+                    </form>                    
+                    <br>
+                    <br><br>
+                    <a href="forgot.html"><p>Forgotten your password?</p></a>
+                    if chk0 
+                        p Sign up successfully, wait for approval
+                </div>
+            </div>
+
+            <div class="back">
+                <div class="inner">
+                    <label for="chk" aria-hidden="true">Log in</label>
+                    <h2>Sign up</h2>
+
+                    <select id="options" class="lakasaka">
+                        <option value="none">Select an option</option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                        <option value="staff">Staff</option>
+                        <option value="supplier">Supplier</option>
+                        <option value="canteen">Canteen</option>
+                    </select>
+
+                    <form action="/admin_su" method="post" class="hidden" id="form-admin" required>
+                        <input id="username" name="username" type="text" placeholder="Enter Your Name" required>
+                        <input id="email" name="email" type="text" placeholder="Enter Your Email" required>   
+                        <input id="contact" name="contact" type="text" placeholder="Enter Your Contact Number" required>                                       
+                        <input id="password" name="password" type="password" placeholder="New Password" required>
+                        //- <input id="password2" name="password2" type="password" placeholder="Confirm Your Password" required>                                          
+                        <button type="submit">Sign Up</button>
+                    </form>
+
+                    <form action="/user_su" method="post" class="hidden" id="form-user">
+                        <input id="name" name="name" type="text" placeholder="Enter Your Name" required>
+                        <input id="username" name="username" type="text" placeholder="Enter Your unique UserName" required>
+                        <input id="email" name="email" type="text" placeholder="Enter Your Email" required>
+                        <input id="contact" name="contact" type="text" placeholder="Enter Your Contact Number" required>
+                        <input id="password"name="password" type="password" placeholder="New Password" required>
+                        //- <input id="password2"name="password2" type="password" placeholder="Confirm Your Password" required>
+                        <button type="submit">Sign Up</button>
+                    </form>
+
+                    <form action="/staff_su" method="post" class="hidden" id="form-staff">                        
+                        <input id="name" name="name" type="text" placeholder="Enter Your Name" required>                                                    
+                        <input id="contact" name="contact" type="text" placeholder="Enter Your Contact Number" required>
+                        <input id="passwor"name="password" type="password" placeholder="New Password" required>                                                    
+                        //- <input id="password2"name="password2" type="password" placeholder="Confirm Your Password" required>
+                        <select name="canteenno" class="sakalaka">                                  
+                            each n in canteen
+                                <option value=`#{n.canteennumber}`>#{n.canteenname}</option>
+                        </select>
+                        <button type="submit">Sign Up</button>                      
+                    </form>
+
+                    <form action="/supplier_su" method="post" class="hidden" id="form-supplier">
+                        <input id="username" name="username" type="text" placeholder="Enter Your Name" required>
+                        <input id="email" name="email" type="text" placeholder="Enter Your Email" required>                                          
+                        <input id="password" name="password" type="password" placeholder=" New Password" required>
+                        <input id="contact" name="contact" type="text" placeholder="Enter Your Contact Number" required>
+                        <input id="address" name="address" type="text" placeholder="Enter Your Address" required>
+                        //- <input id="password2" name="password2" type="password" placeholder="Confirm Your Password" required>                                          
+                        <button type="submit">Sign Up</button>
+                    </form>
+
+                    <form action="/canteen_su" method="post" class="hidden" id="form-canteen">  
+                        <input id="name" name="name" type="text" placeholder="Enter Your CanteenName" required>                    
+                        <input id="ownername" name="ownername" type="text" placeholder="Enter Canteen Owner Name" required>                    
+                        p.mine
+                            | Type of food : <select name="type" class="minank4" required>
+                            //- <option value="38">--Role--</option><!--whatever in value box is store in database-->
+                            <option value="true">Vegeterian</option>
+                            <option value="false">Non-vegeterian</option>
+                            </select>                         
+                        <input id="description" name="description" rows="4" cols="50" placeholder="Description" required>                        
+                        <input id="password" name="password" type="password" placeholder="New Password" required>
+                        //- <input id="password2" name="password2" type="password" placeholder="Confirm Your Password" required>
+                        <button type="submit">Sign Up</button>
+                    </form>                
+                    if check  
+                        p Name already exist
+                    <script defer src="static/change.js"></script>
+                    //- <form action="/signup" method="post" id="contact">
+                    //-     <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+                    //-     <input type="text" name="user_name" id="name" placeholder="Enter Your User Name" required>
+                    //-     <input type="email" name="email" id="pass" placeholder="Enter Your Email" required>
+                    //-     <input type="password" name="pass1" id="pass" placeholder="Password" required>
+                    //-     <input type="password" name="pass2" id="pass" placeholder="Confirm Your Password" required>
+                    //-     <p class="mine">Your Role : <select name="role" id="">
+                    //-     <option value="38">--Role--</option><!--whatever in value box is store in database-->
+                    //-     <option value="Admin">Admin</option>
+                    //-     <option value="Student">User</option>
+                    //-     <option value="sStaff">Staff of cafeteria</option>
+                    //-     <option value="Supplier">Supplier</option>
+                    //-     </select></p>
+                    //-     <button type="submit" class="btn">Sign up</button>
+                    //- </form>
+                </div>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>

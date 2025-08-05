@@ -1,0 +1,45 @@
+html 
+    head 
+        title Approval Page
+        style   
+            include ../static/approval.css
+    body 
+        .nav
+            a(href="/admin") Home_Page 
+            if chek
+                a(href="/approval") Admin_Request
+            else 
+                a(href="/canteen_req") Canteen_Request
+            a(href="/logout") logout
+        .container
+            if chek 
+                each req in request 
+                    br
+                    .card   
+                        p= req.canteenname
+                        p= req.canteentype 
+                        p= req.description  
+                        -const accept="/accept1/"+req.canteennumber;
+                        -const reject="/reject1/"+req.canteennumber;
+                        a(href= accept)
+                            button Accept 
+                        a(href= reject)
+                            button Reject 
+                else 
+                    h1 No Canteen Request is here.
+            else 
+                each req in request 
+                    br
+                    .card   
+                        p= req.name
+                        p= req.email 
+                        -const accept="/accept/"+req.a_id;
+                        -const reject="/reject/"+req.a_id;
+                        a(href= accept)
+                            button Accept 
+                        a(href= reject)
+                            button Reject 
+                else 
+                    h1 No Admin Request is here.
+
+

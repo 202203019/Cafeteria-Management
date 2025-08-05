@@ -1,0 +1,43 @@
+extends index 
+block title 
+    title Category Page 
+block content 
+    <div class="main-navbar">
+        <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+        //- <div class="search">
+        form(action="/search1", method="post" class="search") 
+            <input type="text" name="name" placeholder="Which category you want to eat?">
+            <button class="search-btn">Search</button>
+        //- </div>
+        <div class="profile">
+            a(href="#" class="cart") <ion-icon name="heart-outline"></ion-icon></a>
+            <a class="cart" href="/addtocart"><ion-icon name="cart-outline"></ion-icon></a>
+            <span class="quantity">#{count}</span>
+            if name 
+                <a class="user" href="/update"><ion-icon name="person-outline"></ion-icon>#{name}</a>
+            else 
+                <a class="user" href="/login"><ion-icon name="person-outline"></ion-icon>#{name}</a>
+        </div>
+    </div>
+    div.main-menus
+        <div class="main-filter">
+            <div>
+                <h2 class="main-title">Menu <br>Category</h2>
+                <div class="main-arrow">
+                    <ion-icon class="back-menus" name="chevron-back-circle-outline"></ion-icon>
+                    <ion-icon class="next-menus" name="chevron-forward-circle-outline"></ion-icon>
+                </div>
+            </div>
+            div.filter-wrapper
+                each a in category 
+                    -let ans="/category_handle/"+a.categoryname;
+                    div.filter-card
+                        div.filter-icon
+                            <ion-icon name="restaurant-outline"></ion-icon>
+                        a(href= ans) 
+                            p= a.categoryname
+                        //- div.filter-card
+                        //-     div.filter-icon
+                        //-         <ion-icon name="pizza-outline"></ion-icon>
+                            //- p Pizza  #{a.name}
+        </div>

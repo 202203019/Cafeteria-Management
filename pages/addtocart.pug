@@ -1,0 +1,40 @@
+extends index
+block title 
+    title Add To Cart Page 
+    <link rel="stylesheet" href="static/addtocart.css">
+
+block content 
+    .minank5 
+        <header>
+            <h1 class="minank6">Your Shopping Cart</h1>
+        </header>
+        //- div.main-menus
+        <div class="main-detail">
+            <div class="detail-wrapper">
+                each b in menu 
+                    - let image= "static/picture/image2.png";
+                    div.detail-card
+                        <img class="detail-img" src= #{image}>
+                        div.detail-desc
+                            div.detail-name
+                                h4 Food Name : #{b.foodtitle}
+                                h4 Food Type : #{b.foodtype}
+                                p.price Price : #{b.totalprice} Rs
+                                p Quantity : #{b.quantity} 
+                                -const add="/add/?foodtitle="+b.foodtitle+"&foodtype="+b.foodtype;
+                                -const rem="/rem/?foodtitle="+b.foodtitle+"&foodtype="+b.foodtype;
+                                -const add1="/addsolo/?foodtitle="+b.foodtitle+"&foodtype="+b.foodtype;
+                                -const rem1="/remsolo/?foodtitle="+b.foodtitle+"&foodtype="+b.foodtype;
+                                a(href= add, rel="noopener noreferrer") <button class="a">Add</button> 
+                                a(href= rem, rel="noopener noreferrer") <button class="a">Remove</button> 
+                                a(href= add1, rel="noopener noreferrer") <button class="a">Order This Food</button> 
+                                a(href= rem1, rel="noopener noreferrer") <button class="a">Remove This Food</button> 
+                            <a href="#"><ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon></a>
+                else 
+                    h3 No List For Particular Canteen. 
+    .bottom 
+        if menu.length!=0
+            button.minank10
+                a(href="/allorder") Order All
+            button.minank10
+                a(href="/alldel") Remove All

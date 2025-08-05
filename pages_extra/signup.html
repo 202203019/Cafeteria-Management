@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Example</title>
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1477F2; 
+            color: white;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        } */
+
+        .content {
+            background-color: white; 
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select {
+            padding: 8px;
+            background-color: #0D5B9F; 
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        h1, h2 {
+            color: #0D5B9F; 
+        }
+
+        form {
+            border: 1px solid #0D5B9F;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            max-width: 300px;
+            background-color: #1E88E5; 
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #F6F9FC;
+            border-radius: 4px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Dynamic Form Selection</h1>
+        <label for="options">Select an Option:</label>
+        <select id="options">
+            <option value="none">Select an option</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+            <option value="staff">Staff</option>
+            <option value="supplier">Supplier</option>
+        </select>
+
+        <div class="hidden" id="form-admin">
+            <h2>Admin Form:</h2>
+            <form>
+                <label for="adminInput1">Admin Input 1:</label>
+                <input type="text" id="adminInput1">
+                <br>
+                <label for="adminInput2">Admin Input 2:</label>
+                <input type="text" id="adminInput2">
+            </form>
+        </div>
+
+        <div class="hidden" id="form-user">
+            <h2>User Form:</h2>
+            <form>
+                <label for="userInput1">User Input 1:</label>
+                <input type="text" id="userInput1">
+            </form>
+        </div>
+
+        <div class="hidden" id="form-staff">
+            <h2>Staff Form:</h2>
+            <form>
+                <label for="staffInput1">Staff Input 1:</label>
+                <input type="text" id="staffInput1">
+                <br>
+                <label for "staffInput2">Staff Input 2:</label>
+                <input type="text" id="staffInput2">
+            </form>
+        </div>
+
+        <div class="hidden" id="form-supplier">
+            <h2>Supplier Form:</h2>
+            <form>
+                <label for="supplierInput1">Supplier Input 1:</label>
+                <input type="text" id="supplierInput1">
+            </form>
+        </div>
+
+        <script>
+            const options = document.getElementById('options');
+            const forms = {
+                admin: document.getElementById('form-admin'),
+                user: document.getElementById('form-user'),
+                staff: document.getElementById('form-staff'),
+                supplier: document.getElementById('form-supplier'),
+            };
+
+            options.addEventListener('change', function () {
+                for (const formId in forms) {
+                    forms[formId].classList.add('hidden');
+                }
+
+                const selectedOption = options.value;
+
+                if (selectedOption !== 'none') {
+                    forms[selectedOption].classList.remove('hidden');
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>

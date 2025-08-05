@@ -1,0 +1,30 @@
+extends canteen 
+block title 
+    title Food Handling Page
+
+block content 
+    .nav
+        a(href="/staff_approval") Staff Approval
+        a(href="/order_show") Order List
+        a(href="/logout") Log Out
+    h1.minank13 List Of Food
+    each n in update 
+        .minank12 
+            | #{n.foodtitle} - #{n.foodtype} :-  
+            -const add="add100/?foodtitle="+n.foodtitle+"&foodtype="+n.foodtype;
+            a(href= add)
+                button Add 
+    else 
+        | All Food Added...
+    br
+    hr
+    br
+    h1.minank13 Remove food....
+    each n in update1
+        .minank12 
+            | #{n.foodtitle} - #{n.foodtype} :-  
+            -const rem="rem100/?foodtitle="+n.foodtitle+"&foodtype="+n.foodtype;
+            a(href= rem)
+                button Remove 
+    else 
+        | No Food In Your Inventory...

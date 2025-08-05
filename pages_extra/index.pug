@@ -1,0 +1,44 @@
+html 
+    head 
+    title Cafeteria Website - Home Page
+    style
+        include ../static/general.css
+    body
+        |<!-- Menu section starts -->
+        div.menu.text-center
+            div.wrapper
+                ul 
+                    li #[a(href="/") Home]
+                    li #[a(href="admin.html") Admin]
+                    li #[a(href="category.html") Category]
+                    li #[a(href="food.html") Food]
+                    li #[a(href="order.html") Order]
+                    li #[a(href="login_signup.pug") Login/Signup]
+        |<!-- Menu section ends -->
+        |<!-- Main content section starts -->
+        div.main
+            div.wrapper
+                h1 Dashboard
+                div.col-4.text-center
+                    h1 5
+                    br
+                    | Categories 
+                div.col-4.text-center
+                    h1 5
+                    br
+                    | Categories 
+                div.col-4.text-center
+                    h1 5
+                    br
+                    | Categories 
+                div.col-4.text-center
+                    h1 5
+                    br
+                    | Categories 
+                div.clearFix
+        |<!-- Main content section ends -->
+        |<!-- Footer sections starts -->
+        div.footer
+            div.wrapper
+                p.text-center 2023 All rights reserved, Food House. Developed By - #[a(href="https://minank38@gmail.com" target="_blank") Minank]
+        |<!-- Footer section ends -->

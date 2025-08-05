@@ -1,0 +1,48 @@
+html 
+    head 
+    style   
+        include ../static/approval.css
+    block title 
+        title Canteen Page
+    body 
+    block content 
+        .nav
+            a(href="/foodhandling") Food Handling
+            if chek
+                a(href="/staff_approval") Staff Approval
+            else 
+                a(href="/order_show") Order List
+            a(href="/logout") Log Out
+        .container
+            if chek 
+                each order in orders 
+                    br
+                    .card  
+                        p= order.username
+                        p= order.foodtitle
+                        p= order.foodtype 
+                        p= order.quantity  
+                        -const accept2="/accept2/?username="+order.username+"&foodtitle="+order.foodtitle+"&foodtype="+order.foodtype; 
+                        a(href= accept2) 
+                            button Done 
+                        //- button 
+                        //-     a(href= reject) Reject 
+                else 
+                    h1.minank13 No Order is here.
+            else 
+                each req in request 
+                    br
+                    .card   
+                        p= req.name
+                        p= req.contact 
+                        -const accept3="/accept3/"+req.name;
+                        -const reject3="/reject3/"+req.name;
+                        p= accept3
+                        a(href= accept3) 
+                            button Accept  
+                        a(href= reject3) 
+                            button Reject
+                else 
+                    h1.minank13 No Staff Request is here.
+
+

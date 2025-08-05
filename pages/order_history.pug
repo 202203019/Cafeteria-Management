@@ -1,0 +1,36 @@
+extend index 
+block title 
+    title History Page 
+    <link rel="stylesheet" href="static/order_history.css">
+
+block content   
+    .minank2 
+        <h1 class="minank1">Order History</h1>
+        <section>
+            <table rules = "all">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Food Title</th>
+                        th Food Type
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        th Order Time 
+                        th Delivery Time
+                    </tr>
+                </thead>
+                <tbody>
+                    -let i=1;
+                    each n in orderhistory 
+                        tr 
+                            td= i 
+                            td= n.foodtitle
+                            td= n.foodtype 
+                            td= n.quantity 
+                            td= n.totalprice
+                            td= n.order_time 
+                            td= n.delivery_time_date
+                            -i++;
+                </tbody>
+            </table>
+        </section>

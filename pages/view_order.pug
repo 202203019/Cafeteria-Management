@@ -1,0 +1,44 @@
+extends index
+block title 
+    title View Order Page 
+    style 
+        include ../static/view_order.css
+
+block content
+    each order in orders 
+        br
+        .minank11
+            p Food Name : #{order.foodtitle}
+            p Food Type : #{order.foodtype}
+            p Food Quantity : #{order.quantity}
+            p Total Price : #{order.totalprice}
+            br
+            p wait for making this food....
+    else 
+        h1 No order food pending, please order tasty food...
+    br
+    hr
+    br
+    if orders1.length!=0
+        h1.center Order Completed List, Please Don't forgot to give rating...
+    each order in orders1
+        br
+        .minank11
+            p Food Name : #{order.foodtitle}
+            p Food Type : #{order.foodtype}
+            p Food Quantity : #{order.quantity}
+            p Total Price : #{order.totalprice}
+            -const t="/rating/?foodtitle="+order.foodtitle+"&foodtype="+order.foodtype;
+            -const n="/nointerested/?foodtitle="+order.foodtitle+"&foodtype="+order.foodtype;
+            form(action= t, method="post")
+                <select name="rating" class="sakalaka">                                  
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                button(type="submit") Give rating  
+                a(href= n) 
+                    button Ok(No Give Rating)

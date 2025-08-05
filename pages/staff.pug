@@ -1,0 +1,138 @@
+doctype html
+html
+  head
+    title Staff Profile
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    style.
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url('cafe-background.jpg') fixed;
+        background-size: cover;
+        color: #e6e6e6; 
+      }
+
+      header {
+        background: rgba(60, 60, 60, 0.8); 
+        color: #fff;
+        text-align: center;
+        padding: 1em 0;
+      }
+
+      main {
+        display: flex;
+        max-width: 1200px;
+        margin: 20px auto;
+        background: rgba(240, 240, 240, 0.8); 
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .sidebar {
+        flex: 1;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .photo {
+        width: 100%;
+        max-width: 200px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      table {
+        flex: 2;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #fff; 
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      th, td {
+        border: 1px solid #d9d9d9;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background: #333; 
+        color: #fff;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        background: rgba(60, 60, 60, 0.8);
+        color: #fff;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      main, .sidebar {
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      table {
+        transform: scale(0.95);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      table:hover {
+        transform: scale(1);
+      }
+
+      footer {
+        transition: background 0.5s ease-in-out;
+      }
+
+      footer:hover {
+        background: rgba(80, 80, 80, 0.8); 
+      }
+
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+    script.
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('Page loaded');
+      });
+  body
+    header
+      h1 Staff Profile
+    main
+      .sidebar
+      table.table.table-bordered
+      each op in staffData
+        tbody
+          tr
+            th Name
+            td #{op.name}
+          tr
+            th Canteen Number
+            td #{op.canteennumber}
+          tr
+            th Contact
+            td #{op.contact}
+          tr
+            th Salary
+            td #{op.salary}
+          tr
+            th Skill
+            td #{op.skill}
+    footer
+      p © 2023 Canteen Management System

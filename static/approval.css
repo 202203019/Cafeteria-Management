@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+}
+.card{
+    background-color: rgb(228, 222, 222);
+    width: 80%;
+    height: 113px;
+    border-radius: 8px;
+    margin:8px 0px;
+    margin-left: 10%;
+    box-shadow: #5c5c5c;
+}
+a{
+    text-decoration: none;
+    font-size:18px;
+    font-weight: bold;
+    color: black;
+    margin:38px;
+}
+a:hover{
+    color:red;
+}
+button:hover{
+    cursor: pointer;
+}
+.nav{
+    text-align: center;
+    background-color: aqua;
+    height: 38px;
+}
+.minank12{
+    text-align: center;
+    font-size: 18px;
+    padding: 8px;
+    /* flex-direction: column; */
+}
+.minank13{
+    text-align: center;
+    margin: 23px 0px;
+}
+.minank14{
+    text-align: center;
+    margin: 18px 46%;
+    border-radius: 8px;
+    padding:8px;
+}
+.radio{
+    margin: 8px;
+}

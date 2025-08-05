@@ -1,0 +1,46 @@
+extends index 
+block title 
+    title Menu Page 
+block content 
+    <div class="main-navbar">
+        <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+        //- <div class="search">
+        form(action="/search", method="post", class="search") 
+            <input type="text" name="name" placeholder="What you want to eat?">
+            <button class="search-btn">Search</button>
+        //- </div>
+        <div class="profile">
+            a(href="#" class="cart") <ion-icon name="heart-outline"></ion-icon></a>
+            <a class="cart" href="/addtocart"><ion-icon name="cart-outline"></ion-icon></a>
+            <span class="quantity">#{count}</span>
+            if name 
+                <a class="user" href="/update"><ion-icon name="person-outline"></ion-icon>#{name}</a>
+            else 
+                <a class="user" href="/login"><ion-icon name="person-outline"></ion-icon>#{name}</a>
+        </div>
+    </div>
+    div.main-menus
+        <div class="main-detail">
+            <h2 class="main-title">Choose Order</h2>
+            <div class="detail-wrapper">
+                each b in menu 
+                    - let image= "/static/picture/"+b.image;
+                    div.detail-card
+                        <img class="detail-img" src= #{image}>
+                        div.detail-desc
+                            div.detail-name
+                                h4 Food Name : #{b.foodtitle}
+                                h4 Food Type : #{b.foodtype}
+                                h4 Category Name : #{b.categoryname}
+                                h4 Description : #{b.description}
+                                //- p.detail-sub A traditional Neapolitan Margherita pizza recipe is tomato sauce with fresh tomatoes, mozzarella cheese and basil which represent the colours of the Italian flag – white cheese, green basil and red tomato.
+                                h4 Food Rating : #{b.foodrating} Star
+                                p.price #{b.price} Rs
+                                -const order="/order/?foodtitle="+b.foodtitle+"&foodtype="+b.foodtype;
+                                -const cart="/cart/?foodtitle="+b.foodtitle+"&foodtype="+b.foodtype;
+                                a(href= order, rel="noopener noreferrer") <button class="a">Order Now</button>
+                                a(href= cart, rel="noopener noreferrer") <button class="a">Add to cart</button>
+                            <a href="#"><ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon></a>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,36 @@
+html
+    head 
+        block title 
+        title #{title}
+        style.
+            .select{  
+                text-align: center;
+                margin: 26px;
+            }
+            input{
+                border-radius: 8px;
+                padding: 8px 8px;
+                width: 40%;
+                background: #f2f3e7;
+                border: none;
+                //- outline: none;
+            }
+            button{
+                margin: 6px;
+                padding: 8px 20px;
+                border-radius: 8px;
+                background: #f2f3e7;
+                border: none;
+            }
+            button:hover{
+                cursor: pointer;
+                color: red;
+            }
+    body 
+        nav.select 
+            form(action="/select", method="post") 
+                input(type="text", name="search",placeholder="Search your food here")
+                button(type="submit") Search
+    block content 
+        h1 I love my Family
+        

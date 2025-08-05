@@ -1,0 +1,76 @@
+.minank2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(114, 151, 114);
+    margin: 0;
+    padding: 0;
+    color: rgb(220, 220, 64);
+    /* background-image: url('pavbhaji.jpg'); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+header {
+    background-color: rgb(190, 180, 118);
+    padding: 20px;
+    text-align: center;
+}
+
+.order-history {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(81, 70, 11);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border: 2px solid rgb(145, 242, 145);
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 2px solid darkgreen;
+    /* padding: 12px; */
+    text-align: left;
+}
+
+th{
+    background-color: darkgreen;
+    color: rgb(232, 206, 60);
+    text-align: center;
+    padding: 0%;
+}
+
+tbody tr:hover {
+    background-color: #f2f2f2;
+    transition: background-color 0.3s;
+}
+tr:hover{
+    color: black;
+    font-weight: bold;
+}
+td{
+    border: 2px solid black;
+    /* color: gold; */
+    border-color: gold;
+    padding: 1%;
+}
+
+tr{
+    color: gold;
+}
+
+section{
+    padding: 38px;
+    overflow: hidden;
+}
+
+.minank1{
+    text-align: center;
+}
+

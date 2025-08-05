@@ -1,0 +1,24 @@
+.minank11{
+    background-color: aliceblue;
+    height:183px;
+    width:80%;
+    margin-left:10%;
+    border-radius: 8px;
+}
+p{
+    margin: 8px;
+}
+select{
+    margin: 8px;
+    border-radius: 8px;
+    padding: 3px;
+    width:10%;
+}
+.center{
+    text-align: center;
+}
+button{
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 3px;
+}

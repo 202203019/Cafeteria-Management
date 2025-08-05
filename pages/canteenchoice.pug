@@ -1,0 +1,21 @@
+html 
+    head 
+        title Canteen Choice Page
+        style   
+            include ../static/canteenchoice.css
+    body 
+        .nav
+            //- if !name
+            //-     a(href="/login") login_page 
+            a(href="/logout") logout
+            a(href="/about_us") About Us
+            .right 
+                | User Name = #{name}
+        .container 
+            h1 Which Canteen You Want To Order, Choose Canteen Please
+            form(action="/canteenchoice", method="post") 
+                <select name="canteenno" class="sakalaka">                                  
+                    each n in canteen
+                        <option value=`#{n.canteennumber}`>#{n.canteenname}</option>
+                </select>
+                <button class="minank8" type="submit">Submit</button>   

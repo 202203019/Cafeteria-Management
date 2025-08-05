@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    color: #fff;
+}
+section{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) brightness(30%);
+}
+
+.minank7{
+    background-color: white;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: #5c5c5c;
+}
+
+.color p,h3{
+    color: black;
+    text-align: center;
+    padding: 3px 0px;
+}
+
+.minank0{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-image: url('picture/restaurent.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.container{
+    width: 360px;
+    background: #000;
+    box-shadow: 0 0 8px rgba(250, 250, 250, 0.6);
+    opacity: 0.6;    
+}
+
+.container form{
+    width: 100%;
+    text-align: center;
+    padding:25px 20px;
+}
+
+form h1{
+    padding: 10px 0;
+}
+form .id{
+    position: relative;
+}
+
+.id i{
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    right:20px;
+    transform: translate(-50%); 
+}
+
+form input{
+    width: 100%;
+    height: 50px;
+    margin: 4px 0;
+    border: 1px solid #5c5c5c;
+    border-radius:3px;
+    background: #181717;
+    padding: 0 15px;
+    font-size: 20px;
+}
+form textarea{
+    padding: 5px 15px;
+    border: 1px solid #5c5c5c;
+    border-radius: 3px;
+    background: #181717;
+    font-size: 20px;
+    width: 100%;
+    margin: 4px 0;
+}
+
+form button{
+    margin-top: 5px;
+    border: none;
+    background: #00fff0;
+    color:#222;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+form input:focus,
+form textarea:focus{
+    border: 1px solid #00fff0;
+    color:#00fff0;
+    transition: all 0.3s ease;
+}
+
+form input:focus::placeholder,
+form textarea:focus::placeholder{
+    padding-left: 4px;
+    color: #00fff0;
+    transition: all 0.3s ease;
+}
+
+form input:focus + i{
+    color: #00fff0;
+    transition: all 0.3s ease;
+}
+/* Styling for the 'Canteen' dropdown and label */
+form .id select {
+    width: 100%;
+    height: 50px;
+    margin: 4px 0;
+    border: 1px solid #5c5c5c;
+    border-radius: 3px;
+    background: #181717;
+    padding: 0 15px;
+    font-size: 20px;
+    color: #00fff0 ; /* Text color for the selected option */
+    background: #181717; /* Background color */
+    color: #00fff0; /* Text color */
+    font-size: 20px;
+    padding: 5px 15px;
+}
+
+/* Style the label for 'Canteen' */
+form .id label {
+    display: block;
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: left; /* Adjust alignment as needed */
+    color: #00fff0; /* You can choose your desired color */
+}
+form .id select option:hover {
+    background: #181717; /* Background color on hover */
+    color:#00fff0 ; /* Text color on hover */
+}
+
+/* Styling for the 'Canteen' label */
+form .id label {
+    display: block;
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: left;
+    color: #00fff0; /* Text color for the label */
+}
+
+/* Styling for the icon inside the 'Canteen' */
+form .id i {
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    right: 20px;
+    transform: translate(-50%);
+    color: #00fff0; /* Icon color */
+}

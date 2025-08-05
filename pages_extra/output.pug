@@ -1,0 +1,26 @@
+extends select
+block title 
+    title My name is op
+    style.
+        .card{
+            border: solid black;
+            width: 25%;
+            border-radius: 8px;
+            height: 20%;
+            padding: 10px;
+            margin: 10px 18px;
+            display: inline-block;
+        }
+
+block content 
+    if(ans.length==0)  
+        h1 Search again because no supplier of #{no_name} name is in the list 
+    else   
+        h1 Here is the list of supplier which name is #{name}     
+    each item in ans
+        .card 
+            | Name of supplier : #{item.name}
+            hr
+            //- -const string=`https://${item.email}`
+            | Email of supplier : #[a(href=`https://${item.email}`, target="_blank", rel="noopener noreferrer") #{item.email}]
+            

@@ -1,0 +1,49 @@
+/* styles.css */
+.op{
+    border-radius: 8px;
+    background-color: white;
+}
+.center{
+        padding-top: 38px;
+        padding-bottom: 8px;
+        text-align: center;
+}
+.heading-box{
+    background-color: aqua;
+}
+.cook-box {
+    width: 300px;
+    border: 1px solid rgb(210, 101, 101); /* Dark green border */
+    background-color: rgb(236, 184, 52, 23); /* Yellow background */
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    display: inline-block;
+}
+
+.cook-info {
+    background-color: rgb(178, 232, 178); /* Dark green background for the info box */
+    color: black; /* Yellow text color */
+    padding: 10px;
+    border-radius: 0 0 10px 10px; /* Rounded corners for the bottom */
+}
+
+.cook-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+h2 {
+    margin-bottom: 10px; /* Add some space below the name */
+}
+
+*{
+    margin:0px ;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Arial",sans-serif;
+}
+#text1{
+    font-style: Arial;
+}

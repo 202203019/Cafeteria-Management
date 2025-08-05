@@ -1,0 +1,126 @@
+html 
+    head 
+        //- block style 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        block title     
+            <title> Cafetaria Management System</title>
+
+    body 
+        <div class="sidebar">
+            <h1 class="logo">Cafetaria-Delivery</Cafetaria-Delivery></h1>
+            <div class="sidebar-menus">
+                | Canteen Name : #{name1}
+                <a href="/"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+                <a href="/category"><ion-icon name="apps-outline"></ion-icon>Category</a>
+                <a href="/menu"><ion-icon name="apps-outline"></ion-icon>Menu</a>
+                <a href="/history"><ion-icon name="time-outline"></ion-icon>Order-History</a>
+                //- <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notifications</a>
+                <a href="/reviews"><ion-icon name="chatbubble-ellipses-outline"></ion-icon>Reviews</a>
+                <a href="/canteenchoice"><ion-icon name="chatbubble-ellipses-outline"></ion-icon>Choose Canteen</a>
+                <a href="/vieworder"><ion-icon name="chatbubble-ellipses-outline"></ion-icon>View Order Details</a>
+                <a href="/about_us"><ion-icon name="information-circle-outline"></ion-icon>About Us</a>
+            </div>
+            <div class="sidebar-logout">
+                <a href="/logout"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+            </div>
+        </div>
+        <div class="main">
+            block content
+                <div class="main-navbar">
+                    <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+                    //- <div class="search">
+                    form(action="/search", method="post", class="search") 
+                        <input type="text" name="name" placeholder="What you want to eat?">
+                        <button class="search-btn">Search</button>
+                    //- </div>
+                    <div class="profile">
+                        a(href="#" class="cart") <ion-icon name="heart-outline"></ion-icon></a>
+                        <a class="cart" href="/addtocart"><ion-icon name="cart-outline"></ion-icon></a>
+                        <span class="quantity">#{count}</span>
+                        //- <div class="shopping">
+                        //-     <img src="static/picture/shopping-bag-svgrepo-com.svg">
+                        //-     <span class="quantity">180</span>
+                        //- </div>
+                        if name 
+                            <a class="user" href="/update"><ion-icon name="person-outline"></ion-icon>#{name}</a>
+                        else 
+                            <a class="user" href="/login"><ion-icon name="person-outline"></ion-icon>#{name}</a>
+                    </div>
+                </div>
+
+                <div class="main-highlight">
+                    <div class="main-header">
+                        <h2 class="main-title">Recommendations</h2>
+                        <div class="main-arrow">
+                            <ion-icon class="back" name="chevron-back-circle-outline"></ion-icon>
+                            <ion-icon class="next" name="chevron-forward-circle-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="highlight-wrapper">
+                        each item in rec
+                            - const image= "static/picture/"+item.image
+                            div.highlight-card
+                                <img class="highlight-img" src= #{image}>
+                                div.highlight-desc
+                                    h4= item.foodtitle
+                                    p= item.description
+                    </div>
+                </div> 
+
+                <div class="main-menus">
+                    <div class="main-filter">
+                        <div>
+                            <h2 class="main-title">Menu <br>Category</h2>
+                            <div class="main-arrow">
+                                <ion-icon class="back-menus" name="chevron-back-circle-outline"></ion-icon>
+                                <ion-icon class="next-menus" name="chevron-forward-circle-outline"></ion-icon>
+                            </div>
+                        </div>
+                        div.filter-wrapper
+                            each a in category 
+                                -const ans="/category_handle/"+a.categoryname;
+                                div.filter-card
+                                    div.filter-icon
+                                        <ion-icon name="restaurant-outline"></ion-icon>
+                                    a(href= ans) 
+                                        p= a.categoryname
+                                //- div.filter-card
+                                //-     div.filter-icon
+                                //-         <ion-icon name="pizza-outline"></ion-icon>
+                                    //- p Pizza  #{a.name}
+                    </div>
+
+                    <hr class="divider">
+                    <div class="main-detail">
+                        <h2 class="main-title">Choose Order</h2>
+                        <div class="detail-wrapper">
+                            each b in menu 
+                                -let image= "static/picture/"+b.image
+                                div.detail-card
+                                    <img class="detail-img" src= #{image}>
+                                    div.detail-desc
+                                        div.detail-name                                            
+                                            h4 Food Name : #{b.foodtitle}
+                                            h4 Food Type : #{b.foodtype}
+                                            h4 Category Name : #{b.categoryname}
+                                            h4 Description : #{b.description}
+                                            //- p.detail-sub A traditional Neapolitan Margherita pizza recipe is tomato sauce with fresh tomatoes, mozzarella cheese and basil which represent the colours of the Italian flag – white cheese, green basil and red tomato.
+                                            h4 Food Rating : #{b.foodrating} Star
+                                            p.price #{b.price} Rs
+                                            -const order="/order/?foodtitle="+b.foodtitle+"&foodtype="+b.foodtype;
+                                            -const cart="/cart/?foodtitle="+b.foodtitle+"&foodtype="+b.foodtype;
+                                            a(href= order, rel="noopener noreferrer") <button class="a">Order Now</button>
+                                            a(href= cart, rel="noopener noreferrer") <button class="a">Add to cart</button>
+                                        <a href="#"><ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon></a>
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
+        
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+ <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "cms",
+  "version": "1.0.0",
+  "description": "This is my cafeteria management system project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon extra/server.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "myfamily"
+  ],
+  "author": "Minank",
+  "license": "ISC",
+  "dependencies": {
+    "cms": "file:",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.0.1",
+    "notty": "^0.1.9",
+    "pg": "^8.11.3",
+    "pug": "^3.0.2"
+  }
+}
